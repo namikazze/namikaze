@@ -1,0 +1,37 @@
+env:
+  WORKDIR: "/tmp"
+  CIRRUS_CLONE_DEPTH: "1"
+
+task:
+  name: "Setting Up, Syncing, Building and Uploading"
+  skip: $CIRRUS_BRANCH == 'master'
+  only_if: $CIRRUS_REPO_OWNER == 'namikazze'
+  stateful: true
+  timeout_in: 120m
+  container:
+    image: namikazze/ubuntu:22.04
+    cpu: 8
+    memory: 32G
+
+  Cek-Pengguna_script:
+     - git config --global user.name "namikazze"
+     - git config --global user.email "namikazedevz@gmail.com"
+     - echo "$CREDENTIALS" > ~/.git-credentials
+     - git config --global credential.helper store --file=~/.git-credentials
+
+  Memuat-ccache_background_script:
+     - ./script/memuat_ccache.sh
+
+  Sinkronisasi_script:
+     - ./script/sinkronisasi.sh
+
+  Membangun-rom_script:
+     - ./script/membangun.sh
+
+  Ccache-informasi_background_script:
+     - set -e
+     - export CCACHE_DIR=$WORKDIR/ccache
+     - ccache -s
+
+  Mengunggah-build_script:
+     - ./script/mengemas.sh
