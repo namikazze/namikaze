@@ -15,7 +15,7 @@ mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
 progress & # Jangan di Hapus
-m banana > reading & sleep 95m # Jangan di hapus text line (> reading)
+m banana > reading #& sleep 95m # Jangan di hapus text line (> reading)
 
 retVal=$?
 timeEnd
