@@ -8,8 +8,8 @@ source $CIRRUS_WORKING_DIR/script/config
 timeStart
 
 source build/envsetup.sh
-export BUILD_USERNAME=namikazze
-export BUILD_HOSTNAME=android-build
+export BUILD_USERNAME=namikaze
+export BUILD_HOSTNAME=みなと
 lunch aosp_whyred-userdebug
 mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
