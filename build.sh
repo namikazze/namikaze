@@ -8,7 +8,7 @@ source $CIRRUS_WORKING_DIR/script/config
 timeStart
 
 source build/envsetup.sh
-export BUILD_USERNAME=zacky
+export BUILD_USERNAME=namikaze
 export BUILD_HOSTNAME=android-build
 lunch banana_whyred-userdebug
 mkfifo reading # Jangan di Hapus
