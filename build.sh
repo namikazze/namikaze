@@ -10,7 +10,7 @@ timeStart
 source build/envsetup.sh
 export BUILD_USERNAME=namikaze
 export BUILD_HOSTNAME=android-build
-lunch banana_whyred-userdebug
+lunch banana_whyred-user
 mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
