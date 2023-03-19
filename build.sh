@@ -10,12 +10,12 @@ timeStart
 source build/envsetup.sh
 export BUILD_USERNAME=zacky
 export BUILD_HOSTNAME=android-build
-lunch banana_whyred-user
+lunch banana_whyred-userdebug
 mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
 progress & # Jangan di Hapus
-m banana -j9 > reading & sleep 95m # Jangan di hapus text line (> reading)
+m banana -j8 > reading & sleep 95m # Jangan di hapus text line (> reading)
 
 retVal=$?
 timeEnd
