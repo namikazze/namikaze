@@ -10,7 +10,7 @@ timeStart
 source build/envsetup.sh
 export BUILD_USERNAME=zacky
 export BUILD_HOSTNAME=android-build
-lunch lmodroid_whyred-user
+lunch lmodroid_whyred-userdebug
 mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
