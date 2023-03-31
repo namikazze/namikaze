@@ -12,7 +12,7 @@ export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
 export CCACHE_COMPRESS=true
 which ccache
-ccache -M 20
+ccache -M 100G -F 0
 ccache -z
 bash $CIRRUS_WORKING_DIR/script/config
 bash -c "$command" || true
