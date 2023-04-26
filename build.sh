@@ -10,7 +10,6 @@ timeStart
 source build/envsetup.sh
 export BUILD_USERNAME=zacky
 export BUILD_HOSTNAME=android-build
-export BUILD_CORE_GAPPS=true
 export WITH_GAPPS=true
 lunch banana_whyred-userdebug
 mkfifo reading # Jangan di Hapus
