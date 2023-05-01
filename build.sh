@@ -15,7 +15,7 @@ mkfifo reading # Jangan di Hapus
 tee "${BUILDLOG}" < reading & # Jangan di Hapus
 build_message "Building Started" # Jangan di Hapus
 progress & # Jangan di Hapus
-m bacon -j9 > reading #& sleep 95m # Jangan di hapus text line (> reading)
+m bacon -j8 > reading #& sleep 95m # Jangan di hapus text line (> reading)
 
 retVal=$?
 timeEnd
