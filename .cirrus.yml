@@ -1,15 +1,15 @@
 env:
   WORKDIR: "/tmp"
-  CIRRUS_CLONE_DEPTH: "1"
+#  CIRRUS_CLONE_DEPTH: "1"
 
 task:
   name: "Setting Up, Syncing, Building and Uploading"
   skip: $CIRRUS_BRANCH == 'master'
   only_if: $CIRRUS_REPO_OWNER == 'namikazze'
-  stateful: true
+#  stateful: true
   timeout_in: 120m
   container:
-    image: namikazze/ubuntu:22.04
+    image: thedoctorsz/ubuntu:22.04
     cpu: 8
     memory: 32G
 
